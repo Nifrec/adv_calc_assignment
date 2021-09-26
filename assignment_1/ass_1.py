@@ -25,13 +25,17 @@ def amplitude(ω: float, p: float) -> float:
 
 def plot_amplitude(p_values: Iterable[float]):
     for p in p_values:
-        ω_values = np.arange(0.01, 10, step = 0.1)
+        ω_values = np.arange(0.01, 5, step = 0.01)
         y_values = amplitude(ω_values, p)
         label=f"p={p}"
         plt.plot(ω_values, y_values, label=label)
     plt.xlabel("ω")
     plt.ylabel("$y_p$")
     plt.legend()
+    plt.grid()
+    plt.title(
+        "Maximum amplitude particular solution\nas function of frequency ω", 
+        weight="bold")
     plt.show()
 
 
